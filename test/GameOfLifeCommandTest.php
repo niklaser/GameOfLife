@@ -45,7 +45,7 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
         $input->willImplement('\Symfony\Component\Console\Input\InputInterface');
         $input->getOption('width')->willReturn(300);
         $input->getOption('height')->willReturn(100);
-        $this->input = $input->reveal();
+        $this->input = $input;
 
         $output = $this->prophet->prophesize();
         $output->willImplement('\Symfony\Component\Console\Output\OutputInterface');
@@ -55,10 +55,25 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
 
     public function test() {
         // Arrange
-        $this->stuff->generateBoard($this->input->getOption('width'), $this->input->getOption('height'))->shouldBeCalled();
+        $input = $this->input->reveal();
+        $this->stuff->generateBoard($input->getOption('width'), $input->getOption('height'))->shouldBeCalled();
 
         // Act
-        $this->gameOfLifeCommand->testExecute($this->input, $this->output);
+        $this->gameOfLifeCommand->testExecute($input, $this->output);
+
+        // Assert
+        $this->prophet->checkPredictions();
+    }
+
+    public function testNullParameters() {
+        // Arrange
+        $this->input->getOption('width')->willReturn(null);
+        $this->input->getOption('height')->willReturn(null);
+
+        $this->stuff->generateBoard(100,100)->shouldBeCalled();
+
+        // Act
+        $this->gameOfLifeCommand->testExecute($this->input->reveal(), $this->output);
 
         // Assert
         $this->prophet->checkPredictions();
