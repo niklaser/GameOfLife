@@ -57,8 +57,18 @@
       <file leaf-file-name="GameOfLifeCommandTest.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/GameOfLifeCommandTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13346614">
-              <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.28286853">
+              <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InputInterface.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Input/InputInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.833334">
+              <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -296,21 +306,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Phpunit - 2016.11.15 at 15h 01m 32s.xml">
-      <configuration name="Phpunit" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Phpunit - 2016.11.15 at 15h 02m 09s.xml">
-      <configuration name="Phpunit" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Phpunit - 2016.11.15 at 15h 03m 15s.xml">
-      <configuration name="Phpunit" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Phpunit - 2016.11.15 at 15h 05m 23s.xml">
-      <configuration name="Phpunit" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Phpunit - 2016.11.15 at 15h 06m 51s.xml">
-      <configuration name="Phpunit" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
     <history-entry file="Phpunit - 2016.11.15 at 15h 10m 36s.xml">
       <configuration name="Phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
@@ -324,6 +319,21 @@
       <configuration name="Phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
     <history-entry file="Phpunit - 2016.11.15 at 15h 21m 41s.xml">
+      <configuration name="Phpunit" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Phpunit - 2016.11.15 at 15h 31m 09s.xml">
+      <configuration name="Phpunit" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Phpunit - 2016.11.15 at 15h 31m 19s.xml">
+      <configuration name="Phpunit" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Phpunit - 2016.11.15 at 15h 34m 40s.xml">
+      <configuration name="Phpunit" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Phpunit - 2016.11.15 at 15h 34m 45s.xml">
+      <configuration name="Phpunit" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Phpunit - 2016.11.15 at 15h 34m 56s.xml">
       <configuration name="Phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
   </component>
@@ -349,7 +359,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20447284" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3990099" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3990099" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -488,10 +498,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stuff.php">
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Input/InputInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+        <state vertical-scroll-proportion="-22.833334">
+          <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -500,6 +510,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.0">
           <caret line="8" column="72" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stuff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -516,8 +534,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/GameOfLifeCommandTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13346614">
-          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.28286853">
+          <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
           <folding />
         </state>
       </provider>

@@ -40,25 +40,25 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
         $stuff->willExtend('\GameOfLife\Stuff');
         $this->stuff = $stuff;
 
-        $this->gameOfLifeCommand = new \Test\GameOfLifeCOmmandStubb($stuff->reveal()
-        );
-        $this->input = $this->prophet->prophesize();
-        $this->input->willImplement('\Symfony\Component\Console\Input\InputInterface');
+        $this->gameOfLifeCommand = new \Test\GameOfLifeCOmmandStubb($stuff->reveal());
+        $input = $this->prophet->prophesize();
+        $input->willImplement('\Symfony\Component\Console\Input\InputInterface');
+        $input->getOption('width')->willReturn(400);
+        $input->getOption('height')->willReturn(100);
+        $this->input = $input->reveal();
 
-        $this->output = $this->prophet->prophesize();
-        $this->output->willImplement('\Symfony\Component\Console\Output\OutputInterface');
-
-
+        $output = $this->prophet->prophesize();
+        $output->willImplement('\Symfony\Component\Console\Output\OutputInterface');
+        $this->output = $output->reveal();
     }
 
 
     public function test() {
         // Arrange
-
-        $this->stuff->generateBoard(400,100)->shouldBeCalled();
+        $this->stuff->generateBoard($this->input->getOption('width'), $this->input->getOption('height'))->shouldBeCalled();
 
         // Act
-        $this->gameOfLifeCommand->testExecute($this->input->reveal(), $this->output->reveal());
+        $this->gameOfLifeCommand->testExecute($this->input, $this->output);
 
         // Assert
         $this->prophet->checkPredictions();
