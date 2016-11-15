@@ -27,4 +27,5 @@ class ApplicationTest extends PHPUnit_Framework_TestCase
         $application->run();
         $prophet->checkPredictions();
     }
+
 }
