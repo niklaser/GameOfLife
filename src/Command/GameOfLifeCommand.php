@@ -31,6 +31,6 @@ class GameOfLifeCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $stuff = $this->getStuff();
-        $stuff->generateBoard(400,100);
+        $stuff->generateBoard($input->getOption('width'),$input->getOption('height'));
     }
 }

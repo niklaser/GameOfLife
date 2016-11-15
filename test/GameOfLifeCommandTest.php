@@ -43,7 +43,7 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
         $this->gameOfLifeCommand = new \Test\GameOfLifeCOmmandStubb($stuff->reveal());
         $input = $this->prophet->prophesize();
         $input->willImplement('\Symfony\Component\Console\Input\InputInterface');
-        $input->getOption('width')->willReturn(400);
+        $input->getOption('width')->willReturn(300);
         $input->getOption('height')->willReturn(100);
         $this->input = $input->reveal();
 
