@@ -65,7 +65,7 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
         $this->prophet->checkPredictions();
     }
 
-    public function testNullParameters() {
+    public function testUsesDefaultParameters() {
         // Arrange
         $this->input->getOption('width')->willReturn(null);
         $this->input->getOption('height')->willReturn(null);
