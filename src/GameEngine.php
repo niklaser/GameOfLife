@@ -9,7 +9,7 @@
 namespace GameOfLife;
 
 
-class Stuff
+class GameEngine
 {
     public function generateBoard($width, $height) {
 

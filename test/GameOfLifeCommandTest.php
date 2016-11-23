@@ -44,7 +44,7 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
         $board->willImplement('\GameOfLife\BoardInterface');
 
         $stuff = $this->prophet->prophesize();
-        $stuff->willExtend('\GameOfLife\Stuff');
+        $stuff->willExtend('\GameOfLife\GameEngine');
         $stuff->generateBoard(100,100)->willReturn($board->reveal());
         $stuff->run()->willReturn(Argument::any());
         $this->stuff = $stuff;
@@ -58,7 +58,7 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
         $output->willImplement('\Symfony\Component\Console\Output\OutputInterface');
         $this->output = $output->reveal();
 
-        $this->gameOfLifeCommand = new \Test\GameOfLifeCOmmandStubb($stuff->reveal());
+        $this->gameOfLifeCommand = new \Test\GameOfLifeCommandStub($stuff->reveal());
 
     }
 

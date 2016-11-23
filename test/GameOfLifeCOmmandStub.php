@@ -1,12 +1,7 @@
 <?php
 namespace Test;
-/**
- * Created by PhpStorm.
- * User: akis
- * Date: 15/11/16
- * Time: 14:42
- */
-class GameOfLifeCOmmandStubb extends \GameOfLife\Command\GameOfLifeCommand
+
+class GameOfLifeCommandStub extends \GameOfLife\Command\GameOfLifeCommand
 {
     public $stuff;
 
