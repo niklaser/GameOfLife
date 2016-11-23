@@ -46,6 +46,7 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
         $stuff = $this->prophet->prophesize();
         $stuff->willExtend('\GameOfLife\Stuff');
         $stuff->generateBoard(100,100)->willReturn($board->reveal());
+        $stuff->run()->willReturn(Argument::any());
         $this->stuff = $stuff;
 
         $input = $this->prophet->prophesize();
@@ -89,5 +90,15 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
         // Assert
         $this->prophet->checkPredictions();
 
+    }
+
+    public function testLoopIsStarted() {
+        // Arrange
+
+        // Act
+        $this->gameOfLifeCommand->testExecute($this->input->reveal(), $this->output);
+
+        // Assert
+        $this->stuff->run()->shouldHaveBeenCalled();
     }
 }

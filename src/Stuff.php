@@ -15,4 +15,7 @@ class Stuff
 
     }
 
+    public function run() {
+
+    }
 }
