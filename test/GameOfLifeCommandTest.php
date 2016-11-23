@@ -1,4 +1,6 @@
 <?php
+use Prophecy\Argument;
+
 require __DIR__ . '/../vendor/autoload.php';
 
 /**
@@ -38,36 +40,30 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
 
         $this->prophet = new Prophecy\Prophet;
 
-        $stuff = $this->prophet->prophesize();
-        $stuff->willExtend('\GameOfLife\Stuff');
-        $this->stuff = $stuff;
-
         $board = $this->prophet->prophesize();
         $board->willImplement('\GameOfLife\BoardInterface');
-        $this->stuff->generateBoard(100,100)->willReturn($board);
 
-        $this->gameOfLifeCommand = new \Test\GameOfLifeCOmmandStubb($stuff->reveal());
+        $stuff = $this->prophet->prophesize();
+        $stuff->willExtend('\GameOfLife\Stuff');
+        $stuff->generateBoard(100,100)->willReturn($board->reveal());
+        $this->stuff = $stuff;
+
         $input = $this->prophet->prophesize();
         $input->willImplement('\Symfony\Component\Console\Input\InputInterface');
-        $input->getOption('width')->willReturn(300);
-        $input->getOption('height')->willReturn(100);
-        $input->getOption('seed')->willReturn($this->seed);
-
+        $input->getOption(Argument::type('string'))->willReturn(null);
         $this->input = $input;
 
         $output = $this->prophet->prophesize();
         $output->willImplement('\Symfony\Component\Console\Output\OutputInterface');
         $this->output = $output->reveal();
 
+        $this->gameOfLifeCommand = new \Test\GameOfLifeCOmmandStubb($stuff->reveal());
 
     }
 
 
     public function testUsesDefaultParameters() {
         // Arrange
-        $this->input->getOption('width')->willReturn(null);
-        $this->input->getOption('height')->willReturn(null);
-
         $this->stuff->generateBoard(100,100)->shouldBeCalled();
 
         // Act
@@ -79,6 +75,8 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
 
     public function testSeed() {
         // Arrange
+        $this->input->getOption('width')->willReturn(300);
+        $this->input->getOption('height')->willReturn(100);
         $this->input->getOption('seed')->willReturn($this->seed);
         $board = $this->prophet->prophesize();
         $board->willImplement('\GameOfLife\BoardInterface');
