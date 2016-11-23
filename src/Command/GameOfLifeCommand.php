@@ -33,6 +33,8 @@ class GameOfLifeCommand extends Command
         $stuff = $this->getStuff();
         $width = $input->getOption('width') ? $input->getOption('width') : 100;
         $height = $input->getOption('height') ? $input->getOption('height') : 100;
-        $stuff->generateBoard($width,$height);
+        $seed = $input->getOption('seed');
+        $board = $stuff->generateBoard($width,$height);
+        $board->setSeed($seed);
     }
 }
