@@ -12,7 +12,7 @@ namespace GameOfLife;
 class GameEngine
 {
     public function generateBoard($width, $height) {
-
+      return new Board();
     }
 
     public function run() {

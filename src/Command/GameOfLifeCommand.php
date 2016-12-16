@@ -20,7 +20,7 @@ class GameOfLifeCommand extends Command
     }
 
     protected function getEngine() {
-        echo virhe;
+        echo 'virhe';
     }
 
     protected function configure()
