@@ -19,7 +19,7 @@ class GameOfLifeCommand extends Command
 
     }
 
-    protected function getStuff() {
+    protected function getEngine() {
         echo virhe;
     }
 
@@ -30,12 +30,12 @@ class GameOfLifeCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $stuff = $this->getStuff();
+        $engine = $this->getEngine();
         $width = $input->getOption('width') ? $input->getOption('width') : 100;
         $height = $input->getOption('height') ? $input->getOption('height') : 100;
         $seed = $input->getOption('seed');
-        $board = $stuff->generateBoard($width,$height);
+        $board = $engine->generateBoard($width,$height);
         $board->setSeed($seed);
-        $stuff->run();
+        $engine->run();
     }
 }

@@ -3,19 +3,19 @@ namespace Test;
 
 class GameOfLifeCommandStub extends \GameOfLife\Command\GameOfLifeCommand
 {
-    public $stuff;
+    public $engine;
 
     public function __construct($stuff)
     {
         $name = 'nimi';
-        $this->stuff = $stuff;
+        $this->engine = $stuff;
         parent::__construct($name);
     }
 
-    protected function getStuff()
+    protected function getEngine()
     {
-        $stuff = $this->stuff;
-        return $stuff;
+        $engine = $this->engine;
+        return $engine;
     }
 
     public function testExecute($input, $output) {

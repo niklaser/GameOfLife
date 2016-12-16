@@ -21,7 +21,7 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
 
     private $output;
 
-    private $stuff;
+    private $engine;
 
     private $seed = 'this should be seed';
 
@@ -47,7 +47,7 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
         $stuff->willExtend('\GameOfLife\GameEngine');
         $stuff->generateBoard(100,100)->willReturn($board->reveal());
         $stuff->run()->willReturn(Argument::any());
-        $this->stuff = $stuff;
+        $this->engine = $stuff;
 
         $input = $this->prophet->prophesize();
         $input->willImplement('\Symfony\Component\Console\Input\InputInterface');
@@ -65,7 +65,7 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
 
     public function testUsesDefaultParameters() {
         // Arrange
-        $this->stuff->generateBoard(100,100)->shouldBeCalled();
+        $this->engine->generateBoard(100,100)->shouldBeCalled();
 
         // Act
         $this->gameOfLifeCommand->testExecute($this->input->reveal(), $this->output);
@@ -81,7 +81,7 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
         $this->input->getOption('seed')->willReturn($this->seed);
         $board = $this->prophet->prophesize();
         $board->willImplement('\GameOfLife\BoardInterface');
-        $this->stuff->generateBoard(300,100)->willReturn($board);
+        $this->engine->generateBoard(300,100)->willReturn($board);
         $board->setSeed($this->seed)->shouldBeCalled();
 
         // Act
@@ -99,6 +99,6 @@ class GameOfLifeCommandTest extends PHPUnit_Framework_TestCase
         $this->gameOfLifeCommand->testExecute($this->input->reveal(), $this->output);
 
         // Assert
-        $this->stuff->run()->shouldHaveBeenCalled();
+        $this->engine->run()->shouldHaveBeenCalled();
     }
 }
