@@ -27,6 +27,7 @@ class GameEngine
 
     public function run($generations, $board) {
         for($i = 0; $i < $generations; $i++) {
+            $board  = $board->tick();
             $this->drawer->draw($board);
         }
     }

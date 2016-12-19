@@ -12,4 +12,5 @@ namespace GameOfLife;
 interface BoardInterface
 {
     public function setSeed($seed);
+    public function tick();
 }

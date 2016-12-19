@@ -14,4 +14,11 @@ class Board implements BoardInterface {
   public function setSeed($seed) {
     // TODO: Implement setSeed() method.
   }
+
+
+  public function tick()
+  {
+    $board = new Board();
+    return $board;
+  }
 }
