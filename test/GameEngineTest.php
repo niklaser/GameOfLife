@@ -29,10 +29,12 @@ class GameEngineTest extends PHPUnit_Framework_TestCase
 
     public function testRuns() {
       $generations = 123;
-      $board = $this->gameEngine->generateBoard($this->width, $this->height);
-      $this->gameEngine->run($generations);
-
       $draw = $this->prophet->prophesize('\GameOfLife\DrawInterface');
+      $board = $this->gameEngine->generateBoard($this->width, $this->height);
+      $this->gameEngine->setDrawer($draw->reveal());
+      $this->gameEngine->run($generations, $board);
+
+
 
       $draw->draw($board)->shouldBeCalledTimes($generations);
       $this->prophet->checkPredictions();

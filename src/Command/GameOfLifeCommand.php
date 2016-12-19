@@ -36,6 +36,6 @@ class GameOfLifeCommand extends Command
         $seed = $input->getOption('seed');
         $board = $engine->generateBoard($width,$height);
         $board->setSeed($seed);
-        $engine->run();
+        $engine->run(10, $board);
     }
 }
